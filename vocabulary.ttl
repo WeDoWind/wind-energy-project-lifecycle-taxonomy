@@ -2,24 +2,65 @@
 @prefix pav: <http://purl.org/pav/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix sst: <https://www.ieawindtask43.org/ontoforge/simple-skos-taxonomy/> .
+@prefix sst: <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> .
 
-<https://www.ieawindtask43.org/ontoforge/simple-skos-taxonomy/> a skos:ConceptScheme;
+<https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> a skos:ConceptScheme;
   dct:description "A simple SKOS Taxonomy of some concepts"@en;
   dct:title "Simple SKOS Taxonomy"@en;
   pav:createdOn "2020-12-01T00:00:00+01:00"@en;
   pav:lastUpdatedOn "2020-12-01T00:00:00+01:00"@en;
   pav:version "0.0.1"@en;
-  skos:hasTopConcept sst:LevelOneConcept;
+  skos:hasTopConcept sst:Construction, sst:EndOfLife, sst:LifeCycleStage, sst:Operation,
+    sst:Permitting, sst:Planning, sst:Preconstruction, sst:Prospecting;
   skos:prefLabel "Simple SKOS Taxonomy"@en .
 
-sst:LevelOneConcept a skos:Concept;
-  skos:inScheme <https://www.ieawindtask43.org/ontoforge/simple-skos-taxonomy/>;
-  skos:narrower sst:LevelTwoConcept;
-  skos:prefLabel "Level One Concept"@en;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/simple-skos-taxonomy/> .
+sst:Planning a skos:Concept;
+  skos:definition "Wind farm planning phase"@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
+  skos:narrower sst:WindResourceAssessment;
+  skos:prefLabel "Planning"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> .
 
-sst:LevelTwoConcept a skos:Concept;
-  skos:broader sst:LevelOneConcept;
-  skos:inScheme <https://www.ieawindtask43.org/ontoforge/simple-skos-taxonomy/>;
-  skos:prefLabel "Level Two Concept"@en .
+sst:WindResourceAssessment a skos:Concept;
+  skos:broader sst:Planning;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
+  skos:prefLabel "Wind Resource Assessment"@en .
+
+sst:Operation a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
+  skos:prefLabel "Operation"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> .
+
+sst:Preconstruction a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
+  skos:prefLabel "Preconstruction"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> .
+
+sst:EndOfLife a skos:Concept;
+  skos:definition "This includes everything that may happen at the end of life, including recycling, ........"@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
+  skos:prefLabel "End Of Life"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> .
+
+sst:Prospecting a skos:Concept;
+  skos:definition "Rough energy yield estimates and comparisons at different potential sites"@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
+  skos:prefLabel "Prospecting"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> .
+
+sst:Permitting a skos:Concept;
+  skos:definition "Environmental permits, land permits"@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
+  skos:prefLabel "Permitting"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> .
+
+sst:LifeCycleStage a skos:Concept;
+  skos:definition "Time period in the life cycle of an asset"@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
+  skos:prefLabel "Life Cycle Stage"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> .
+
+sst:Construction a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
+  skos:prefLabel "Construction"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> .
