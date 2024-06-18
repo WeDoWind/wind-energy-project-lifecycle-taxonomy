@@ -1,0 +1,25 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sst: <https://www.ieawindtask43.org/ontoforge/simple-skos-taxonomy/> .
+
+<https://www.ieawindtask43.org/ontoforge/simple-skos-taxonomy/> a skos:ConceptScheme;
+  dct:description "A simple SKOS Taxonomy of some concepts"@en;
+  dct:title "Simple SKOS Taxonomy"@en;
+  pav:createdOn "2020-12-01T00:00:00+01:00"@en;
+  pav:lastUpdatedOn "2020-12-01T00:00:00+01:00"@en;
+  pav:version "0.0.1"@en;
+  skos:hasTopConcept sst:LevelOneConcept;
+  skos:prefLabel "Simple SKOS Taxonomy"@en .
+
+sst:LevelOneConcept a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/simple-skos-taxonomy/>;
+  skos:narrower sst:LevelTwoConcept;
+  skos:prefLabel "Level One Concept"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/simple-skos-taxonomy/> .
+
+sst:LevelTwoConcept a skos:Concept;
+  skos:broader sst:LevelOneConcept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/simple-skos-taxonomy/>;
+  skos:prefLabel "Level Two Concept"@en .
