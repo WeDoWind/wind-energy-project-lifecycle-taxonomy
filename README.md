@@ -1,4 +1,4 @@
-# Taxonomy of wind Energy Project Lifecyle Stages (WEPLS)
+# Taxonomy of Wind Energy Project Lifecyle Stages (WEPLS)
 
 This is work-in-progress taxonomical organisation of lifcycle stages for a generic wind energy project using a Simple Knoledge Organisation System (SKOS) data model.
 
