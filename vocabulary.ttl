@@ -1,67 +1,258 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix pav: <http://purl.org/pav/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix nace2: <http://data.europa.eu/ux2/nace2/nace2> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix sst: <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix wpl: <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> a skos:ConceptScheme;
+<https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> a skos:ConceptScheme;
+  dct:creator "IEA Wind Task 43"@en;
   dct:description "A simple SKOS Taxonomy of life-cycle stages"@en;
-  dct:title "Wind Energy Project Life-cycle Stages"@en;
-  pav:createdOn "2020-12-01T00:00:00+01:00"@en;
-  pav:lastUpdatedOn "2020-12-01T00:00:00+01:00"@en;
-  pav:version "0.0.1"@en;
-  skos:hasTopConcept sst:LifeCycleStage;
-  skos:prefLabel "WEPLS"@en .
+  dct:license <http://creativecommons.org/licenses/by/4.0/>;
+  dct:title "Life Cycle Phase and Process Taxonomy"@en;
+  owl:versionInfo "0.1.0"@en;
+  skos:hasTopConcept wpl:LifeCyclePhase, wpl:Process, wpl:ProcessGroup;
+  skos:prefLabel "WINDPROFILE"@en .
 
-sst:LifeCycleStage a skos:Concept;
-  skos:definition "Time period in the life cycle of an asset"@en;
-  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
-  skos:narrower sst:Construction, sst:EndOfLife, sst:Operation, sst:Permitting, sst:Planning,
-    sst:Preconstruction, sst:Prospecting;
-  skos:prefLabel "Life Cycle Stage"@en;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/> .
+wpl:LifeCyclePhase a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:narrower wpl:ProductLifeCyclePhase, wpl:ReferenceProjectLifeCyclePhase, wpl:WindEnergyProjectLife-cycleStages;
+  skos:prefLabel "Life Cycle Phase"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
 
-sst:Planning a skos:Concept;
-  skos:broader sst:LifeCycleStage;
-  skos:definition "Wind farm planning phase"@en;
-  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
-  skos:narrower sst:WindResourceAssessment;
+wpl:WindEnergyProjectLife-cycleStages a skos:Concept;
+  skos:broader wpl:LifeCyclePhase;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:narrower wpl:Commissioning, wpl:Construction, wpl:Decommissioning, wpl:Development,
+    wpl:Feasibility, wpl:Identification, wpl:Operation-Maintenance, wpl:Pre-Construction;
+  skos:prefLabel "Wind Energy Project Life-cycle Stages"@en .
+
+wpl:Identification a skos:Concept;
+  skos:altLabel "Pilot Study"@en, "Screening"@en, "Site Selection"@en;
+  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Identification"@en .
+
+wpl:Feasibility a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:ReferenceProjectLifeCyclePhase, wpl:WindEnergyProjectLife-cycleStages;
+  skos:definition "This phase determines if the business case is valid and if the organization has the capability to deliver the intended outcome."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Feasibility"@en .
+
+wpl:Development a skos:Concept;
+  skos:altLabel "Design"@en, "Planning & Permitting"@en;
+  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Development"@en .
+
+wpl:Pre-Construction a skos:Concept;
+  skos:altLabel "Procurement"@en, "Purchase"@en;
+  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Pre-Construction"@en .
+
+wpl:Construction a skos:Concept;
+  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Construction"@en .
+
+wpl:Commissioning a skos:Concept;
+  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Commissioning"@en .
+
+wpl:Operation-Maintenance a skos:Concept;
+  skos:altLabel "Middle of life"@en;
+  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Operation & Maintenance"@en .
+
+wpl:Decommissioning a skos:Concept;
+  skos:altLabel "End of life"@en;
+  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Decommissioning"@en .
+
+wpl:ReferenceProjectLifeCyclePhase a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:LifeCyclePhase;
+  skos:definition "Project phase is a collection of logically related project activities (processes) that culminates in the completion of one or more deliverables. Project Life Cycle is the series of phases that a project passes through from its start to its completion."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:narrower wpl:AllProjectPhases, wpl:Build, wpl:Close, wpl:Deploy, wpl:Design,
+    wpl:Feasibility, wpl:Test;
+  skos:prefLabel "Reference Project Life Cycle Phase"@en .
+
+wpl:Design a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:ProductLifeCyclePhase, wpl:ReferenceProjectLifeCyclePhase;
+  skos:definition "Planning and analysis lead to the design of the project deliverable that will be developed."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Design"@en .
+
+wpl:Build a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:definition "Construction of the deliverable with integrated quality assurance activities is conducted."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Build"@en .
+
+wpl:Test a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:definition "Final quality review and inspection of deliverables are carried out before transition, go-live, or acceptance by the customer."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Test"@en .
+
+wpl:Deploy a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:definition "Project deliverables are put into use and transitional activities required for sustainment, benefits realization, and organizational change management are completed."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Deploy"@en .
+
+wpl:Close a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:definition "The project is closed, project knowledge and artifacts are archived, project team members are released, and contracts are closed."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Close"@en .
+
+wpl:AllProjectPhases a skos:Concept;
+  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "All Project Phases"@en .
+
+wpl:ProductLifeCyclePhase a skos:Concept;
+  skos:broader wpl:LifeCyclePhase;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:narrower wpl:AllProductPhases, wpl:Conception, wpl:Design, wpl:Realisation, wpl:Service;
+  skos:prefLabel "Product Life Cycle Phase"@en .
+
+wpl:Conception a skos:Concept;
+  skos:broader wpl:ProductLifeCyclePhase;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Conception"@en .
+
+wpl:Realisation a skos:Concept;
+  skos:broader wpl:ProductLifeCyclePhase;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Realisation"@en .
+
+wpl:Service a skos:Concept;
+  skos:broader wpl:ProductLifeCyclePhase;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Service"@en .
+
+wpl:AllProductPhases a skos:Concept;
+  skos:broader wpl:ProductLifeCyclePhase;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "All Product Phases"@en .
+
+wpl:Process a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:narrower wpl:ProductProcess, wpl:ProjectManagementProcess, wpl:SupportingProcess;
+  skos:prefLabel "Process"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:ProductProcess a skos:Concept;
+  skos:altLabel "Delivery Process"@en;
+  skos:broader wpl:Process;
+  skos:definition "Product process is not unique to project management, which results in the specification and provision of a particular product, service or result, and which varies depending on the particular project deliverable."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:narrower wpl:WindPowerPlantProcess, wpl:WindTurbineProductProcess;
+  skos:prefLabel "Product Process"@en .
+
+wpl:WindTurbineProductProcess a skos:Concept;
+  skos:broader wpl:ProductProcess;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Product Process"@en .
+
+wpl:WindPowerPlantProcess a skos:Concept;
+  skos:broader wpl:ProductProcess;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Power Plant Process"@en .
+
+wpl:ProjectManagementProcess a skos:Concept;
+  skos:broader wpl:Process;
+  skos:definition "Project management process is specific to project management. It determines how the activities selected for the project are managed."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Project Management Process"@en .
+
+wpl:SupportingProcess a skos:Concept;
+  skos:altLabel "Cross-cutting Process"@en, "Supporting Activities"@en;
+  skos:broader wpl:Process;
+  skos:definition "Supporting process is a process not unique to project management and which provides relevant and valuable support to product and project management processes in such disciplines as logistics, finance, accounting and safety."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Supporting Process"@en .
+
+wpl:ProcessGroup a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:definition "Projects that follow a process-based approach may adopt project process groups. Project management processes can be organized into logical groupings of project management inputs, tools and techniques, and outputs that are tailored to meet the needs of the organization, stakeholders, and the project. Groups of processes are not project phases. The Process Groups interact within each phase of a project life cycle. In a process-based approach, the output of one process generally becomes an input to another process or is a deliverable of the project or project phase."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:narrower wpl:Closure, wpl:Execution, wpl:Initiation, wpl:Performance-Control,
+    wpl:Planning;
+  skos:prefLabel "Process Group"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Initiation a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:ProcessGroup;
+  skos:definition "Those processes performed to define a new project or a new phase of an existing project by obtaining authorization to start the project or phase."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Initiation"@en .
+
+wpl:Planning a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:ProcessGroup;
+  skos:definition "Those processes required to establish the scope of the project, refine the objectives, and define the course of action required to attain the objectives that the project was undertaken to achieve."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "Planning"@en .
 
-sst:WindResourceAssessment a skos:Concept;
-  skos:broader sst:Planning;
-  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
-  skos:prefLabel "Wind Resource Assessment"@en .
+wpl:Execution a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:altLabel "Implementation"@en;
+  skos:broader wpl:ProcessGroup;
+  skos:definition "Those processes performed to complete the work defined in the project management plan to satisfy the project requirements."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Execution"@en .
 
-sst:Operation a skos:Concept;
-  skos:broader sst:LifeCycleStage;
-  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
-  skos:prefLabel "Operation"@en .
+wpl:Performance-Control a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:ProcessGroup;
+  skos:definition "Those processes required to track, review, and regulate the progress and performance of the project; identify any areas in which changes to the plan are required; and initiate the corresponding changes."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Performance & Control"@en .
 
-sst:Preconstruction a skos:Concept;
-  skos:broader sst:LifeCycleStage;
-  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
-  skos:prefLabel "Preconstruction"@en .
-
-sst:EndOfLife a skos:Concept;
-  skos:broader sst:LifeCycleStage;
-  skos:definition "This includes everything that may happen at the end of life, including recycling"@en;
-  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
-  skos:prefLabel "End Of Life"@en .
-
-sst:Prospecting a skos:Concept;
-  skos:broader sst:LifeCycleStage;
-  skos:definition "Rough energy yield estimates and comparisons at different potential sites"@en;
-  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
-  skos:prefLabel "Prospecting"@en .
-
-sst:Permitting a skos:Concept;
-  skos:broader sst:LifeCycleStage;
-  skos:definition "Environmental permits, land permits"@en;
-  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
-  skos:prefLabel "Permitting"@en .
-
-sst:Construction a skos:Concept;
-  skos:broader sst:LifeCycleStage;
-  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-stages-taxonomy/>;
-  skos:prefLabel "Construction"@en .
+wpl:Closure a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:ProcessGroup;
+  skos:definition "Those processes performed to formally complete or close a project, phase, or contract."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Closure"@en .
