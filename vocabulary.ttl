@@ -36,57 +36,62 @@ wpl:LifeCyclePhase a skos:Concept;
 wpl:WindEnergyProjectLife-cycleStages a skos:Concept;
   skos:broader wpl:LifeCyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:narrower wpl:Commissioning, wpl:Construction, wpl:Decommissioning, wpl:Development,
-    wpl:Feasibility, wpl:Identification, wpl:Operation-Maintenance, wpl:Pre-Construction;
+  skos:narrower wpl:0.Identification, wpl:1.Feasibility, wpl:2.Development, wpl:3.Pre-Construction,
+    wpl:4.Construction, wpl:5.Commissioning, wpl:6.Operation-Maintenance, wpl:7.Decommissioning;
   skos:prefLabel "Wind Energy Project Life-cycle Stages"@en .
 
-wpl:Identification a skos:Concept;
+wpl:0.Identification a skos:Concept;
   skos:altLabel "Pilot Study"@en, "Screening"@en, "Site Selection"@en;
   skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:definition "Initial stage where potential wind energy sites are identified based on criteria like wind resource, land availability, and environmental factors."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Identification"@en .
+  skos:prefLabel "0. Identification"@en .
 
-wpl:Feasibility a skos:Concept;
-  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
-  dct:creator <https://www.pmi.org/>;
-  skos:broader wpl:ReferenceProjectLifeCyclePhase, wpl:WindEnergyProjectLife-cycleStages;
-  skos:definition "This phase determines if the business case is valid and if the organization has the capability to deliver the intended outcome."@en;
+wpl:1.Feasibility a skos:Concept;
+  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:definition "Detailed analysis of the identified site, including technical, environmental, and financial assessments to determine project viability."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Feasibility"@en .
+  skos:prefLabel "1. Feasibility"@en .
 
-wpl:Development a skos:Concept;
+wpl:2.Development a skos:Concept;
   skos:altLabel "Design"@en, "Planning & Permitting"@en;
   skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:definition "Preparation of detailed plans and engineering designs, wind turbine technology and vendor selection, securing permits, land leases, financing, and stakeholder agreements required to move forward with the project."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Development"@en .
+  skos:prefLabel "2. Development"@en .
 
-wpl:Pre-Construction a skos:Concept;
+wpl:3.Pre-Construction a skos:Concept;
   skos:altLabel "Procurement"@en, "Purchase"@en;
   skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:definition "Finalizing detailed engineering designs, procurement of materials, and preparation of the site for construction, including contractor selection."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Pre-Construction"@en .
+  skos:prefLabel "3. Pre-Construction"@en .
 
-wpl:Construction a skos:Concept;
+wpl:4.Construction a skos:Concept;
   skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:definition "Physical construction of the wind farm, including infrastructure setup (turbines, roads, electrical connections) and project management oversight."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Construction"@en .
+  skos:prefLabel "4. Construction"@en .
 
-wpl:Commissioning a skos:Concept;
+wpl:5.Commissioning a skos:Concept;
   skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:definition "Testing and certifying that the wind farm operates according to design specifications before becoming fully operational."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Commissioning"@en .
+  skos:prefLabel "5. Commissioning"@en .
 
-wpl:Operation-Maintenance a skos:Concept;
+wpl:6.Operation-Maintenance a skos:Concept;
   skos:altLabel "Middle of life"@en;
   skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:definition "Ongoing operation of the wind farm, including regular monitoring, maintenance, and optimization to ensure maximum energy production and efficiency."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Operation & Maintenance"@en .
+  skos:prefLabel "6. Operation & Maintenance"@en .
 
-wpl:Decommissioning a skos:Concept;
+wpl:7.Decommissioning a skos:Concept;
   skos:altLabel "End of life"@en;
   skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:definition "End-of-life activities for the wind farm, involving dismantling turbines and infrastructure, restoring the site, and recycling or disposing of materials."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Decommissioning"@en .
+  skos:prefLabel "7. Decommissioning"@en .
 
 wpl:ReferenceProjectLifeCyclePhase a skos:Concept;
   dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
@@ -97,6 +102,14 @@ wpl:ReferenceProjectLifeCyclePhase a skos:Concept;
   skos:narrower wpl:AllProjectPhases, wpl:Build, wpl:Close, wpl:Deploy, wpl:Design,
     wpl:Feasibility, wpl:Test;
   skos:prefLabel "Reference Project Life Cycle Phase"@en .
+
+wpl:Feasibility a skos:Concept;
+  dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
+  dct:creator <https://www.pmi.org/>;
+  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:definition "This phase determines if the business case is valid and if the organization has the capability to deliver the intended outcome."@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Feasibility"@en .
 
 wpl:Design a skos:Concept;
   dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
