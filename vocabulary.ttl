@@ -23,77 +23,100 @@
   dct:description "A simple SKOS Taxonomy of life-cycle stages"@en;
   dct:license <http://creativecommons.org/licenses/by/4.0/>;
   dct:title "Life Cycle Phase and Process Taxonomy"@en;
-  owl:versionInfo "0.1.0"@en;
-  skos:hasTopConcept wpl:LifeCyclePhase, wpl:Process, wpl:ProcessGroup;
+  owl:versionInfo "0.1.1"@en;
+  skos:hasTopConcept wpl:Analysis-Modelling, wpl:AnnualEnergyProductionAssessment, wpl:Certification,
+    wpl:ChangeManagement, wpl:CivilWorks, wpl:Commissioning, wpl:ConceptualModelling,
+    wpl:DataAnalysis, wpl:DataManagement, wpl:Documentation-Reporting, wpl:ElectricalWorks,
+    wpl:EnvironmentalImpactAssessment, wpl:EquipmentServicing, wpl:Ethics-Compliance,
+    wpl:Expansion, wpl:FailureDetection, wpl:FaultDiagnosis, wpl:FinancialControl, wpl:FinancialManagemnt,
+    wpl:FinancialPlanning, wpl:Forecasting, wpl:Health-Safety, wpl:HumanResourceManagement,
+    wpl:InformationSecurityManagement, wpl:Inspeciton, wpl:KnowledgeManagement, wpl:Legal-Regulatory,
+    wpl:LifeCyclePhase, wpl:MaintenceScheduling, wpl:MarketAnalysis, wpl:MathematicalModelling,
+    wpl:Meeting-Event, wpl:Monitoring-Reporting, wpl:Permitting, wpl:PhaseOut, wpl:Process,
+    wpl:ProcessGroup, wpl:Procurement, wpl:Prospecting, wpl:QualityAssureance-Control,
+    wpl:Real-TimeMonitoring, wpl:RemainingUsefulLifeCalculation, wpl:Research-Develeopment,
+    wpl:RiskAssessment, wpl:SWOTanalysis, wpl:SensitivityAnalysis, wpl:Simulation, wpl:SiteSelection,
+    wpl:StakeholderCommunication, wpl:StructuralHealthMonitoring, wpl:TechnologySelection,
+    wpl:UncertaintyQuantification, wpl:Upgrade-Retrofits, wpl:VendorSelection, wpl:What-ifScenario,
+    wpl:WidPowerPlantMaintenence, wpl:WindPowerPlantConstruction, wpl:WindPowerPlantControl,
+    wpl:WindPowerPlantLayoutDefinition, wpl:WindPowerPlantOperation, wpl:WindPowerPlantOperationalAnalysis,
+    wpl:WindPowerPlantSitePreparation, wpl:WindPowerPlantSpecification, wpl:WindPowerPlantSupervision,
+    wpl:WindResourceAssessment, wpl:WindTurbineAssembly, wpl:WindTurbineCertification,
+    wpl:WindTurbineComponentsAssembly, wpl:WindTurbineComponentsManufacturing, wpl:WindTurbineComponentsRecycling,
+    wpl:WindTurbineComponentsTransportaion, wpl:WindTurbineConceptDesign, wpl:WindTurbineControl,
+    wpl:WindTurbineDecomissioning, wpl:WindTurbineDesign, wpl:WindTurbineDesignValidation,
+    wpl:WindTurbineDissasembly, wpl:WindTurbineInstallation, wpl:WindTurbineManufacturingPlanning,
+    wpl:WindTurbineOperation-Monitoring, wpl:WindTurbineSpecification, wpl:WindTurbineTesting,
+    wpl:WindTurbineUsefulLifeExtension, wpl:WindTurbineVending, wpl:WindTurbineVendorSupport-Maintenence;
   skos:prefLabel "WINDPROFILE"@en .
 
 wpl:LifeCyclePhase a skos:Concept;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:narrower wpl:ProductLifeCyclePhase, wpl:ReferenceProjectLifeCyclePhase, wpl:WindEnergyProjectLife-cycleStages;
+  skos:narrower wpl:ProductLife-cyclePhase, wpl:ReferenceProjectLife-cyclePhase, wpl:WindEnergyProjectLife-cyclePhase;
   skos:prefLabel "Life Cycle Phase"@en;
   skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
 
-wpl:WindEnergyProjectLife-cycleStages a skos:Concept;
+wpl:WindEnergyProjectLife-cyclePhase a skos:Concept;
   skos:broader wpl:LifeCyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:narrower wpl:0.Identification, wpl:1.Feasibility, wpl:2.Development, wpl:3.Pre-Construction,
     wpl:4.Construction, wpl:5.Commissioning, wpl:6.Operation-Maintenance, wpl:7.Decommissioning;
-  skos:prefLabel "Wind Energy Project Life-cycle Stages"@en .
+  skos:prefLabel "Wind Energy Project Life-cycle Phase"@en .
 
 wpl:0.Identification a skos:Concept;
   skos:altLabel "Pilot Study"@en, "Screening"@en, "Site Selection"@en;
-  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:broader wpl:WindEnergyProjectLife-cyclePhase;
   skos:definition "Initial stage where potential wind energy sites are identified based on criteria like wind resource, land availability, and environmental factors."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "0. Identification"@en .
+  skos:prefLabel "Identification"@en .
 
 wpl:1.Feasibility a skos:Concept;
-  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:broader wpl:WindEnergyProjectLife-cyclePhase;
   skos:definition "Detailed analysis of the identified site, including technical, environmental, and financial assessments to determine project viability."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "1. Feasibility"@en .
+  skos:prefLabel "Feasibility"@en .
 
 wpl:2.Development a skos:Concept;
   skos:altLabel "Design"@en, "Planning & Permitting"@en;
-  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:broader wpl:WindEnergyProjectLife-cyclePhase;
   skos:definition "Preparation of detailed plans and engineering designs, wind turbine technology and vendor selection, securing permits, land leases, financing, and stakeholder agreements required to move forward with the project."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "2. Development"@en .
+  skos:prefLabel "Development"@en .
 
 wpl:3.Pre-Construction a skos:Concept;
   skos:altLabel "Procurement"@en, "Purchase"@en;
-  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:broader wpl:WindEnergyProjectLife-cyclePhase;
   skos:definition "Finalizing detailed engineering designs, procurement of materials, and preparation of the site for construction, including contractor selection."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "3. Pre-Construction"@en .
+  skos:prefLabel "Pre-Construction"@en .
 
 wpl:4.Construction a skos:Concept;
-  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:broader wpl:WindEnergyProjectLife-cyclePhase;
   skos:definition "Physical construction of the wind farm, including infrastructure setup (turbines, roads, electrical connections) and project management oversight."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "4. Construction"@en .
+  skos:prefLabel "Construction"@en .
 
 wpl:5.Commissioning a skos:Concept;
-  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:broader wpl:WindEnergyProjectLife-cyclePhase;
   skos:definition "Testing and certifying that the wind farm operates according to design specifications before becoming fully operational."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "5. Commissioning"@en .
+  skos:prefLabel "Commissioning"@en .
 
 wpl:6.Operation-Maintenance a skos:Concept;
   skos:altLabel "Middle of life"@en;
-  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:broader wpl:WindEnergyProjectLife-cyclePhase;
   skos:definition "Ongoing operation of the wind farm, including regular monitoring, maintenance, and optimization to ensure maximum energy production and efficiency."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "6. Operation & Maintenance"@en .
+  skos:prefLabel "Operation & Maintenance"@en .
 
 wpl:7.Decommissioning a skos:Concept;
   skos:altLabel "End of life"@en;
-  skos:broader wpl:WindEnergyProjectLife-cycleStages;
+  skos:broader wpl:WindEnergyProjectLife-cyclePhase;
   skos:definition "End-of-life activities for the wind farm, involving dismantling turbines and infrastructure, restoring the site, and recycling or disposing of materials."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "7. Decommissioning"@en .
+  skos:prefLabel "Decommissioning"@en .
 
-wpl:ReferenceProjectLifeCyclePhase a skos:Concept;
+wpl:ReferenceProjectLife-cyclePhase a skos:Concept;
   dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
   dct:creator <https://www.pmi.org/>;
   skos:broader wpl:LifeCyclePhase;
@@ -101,12 +124,12 @@ wpl:ReferenceProjectLifeCyclePhase a skos:Concept;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:narrower wpl:AllProjectPhases, wpl:Build, wpl:Close, wpl:Deploy, wpl:Design,
     wpl:Feasibility, wpl:Test;
-  skos:prefLabel "Reference Project Life Cycle Phase"@en .
+  skos:prefLabel "Reference Project Life-cycle Phase"@en .
 
 wpl:Feasibility a skos:Concept;
   dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
   dct:creator <https://www.pmi.org/>;
-  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:broader wpl:ReferenceProjectLife-cyclePhase;
   skos:definition "This phase determines if the business case is valid and if the organization has the capability to deliver the intended outcome."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "Feasibility"@en .
@@ -114,7 +137,7 @@ wpl:Feasibility a skos:Concept;
 wpl:Design a skos:Concept;
   dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
   dct:creator <https://www.pmi.org/>;
-  skos:broader wpl:ProductLifeCyclePhase, wpl:ReferenceProjectLifeCyclePhase;
+  skos:broader wpl:ProductLife-cyclePhase, wpl:ReferenceProjectLife-cyclePhase;
   skos:definition "Planning and analysis lead to the design of the project deliverable that will be developed."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "Design"@en .
@@ -122,7 +145,7 @@ wpl:Design a skos:Concept;
 wpl:Build a skos:Concept;
   dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
   dct:creator <https://www.pmi.org/>;
-  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:broader wpl:ReferenceProjectLife-cyclePhase;
   skos:definition "Construction of the deliverable with integrated quality assurance activities is conducted."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "Build"@en .
@@ -130,7 +153,7 @@ wpl:Build a skos:Concept;
 wpl:Test a skos:Concept;
   dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
   dct:creator <https://www.pmi.org/>;
-  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:broader wpl:ReferenceProjectLife-cyclePhase;
   skos:definition "Final quality review and inspection of deliverables are carried out before transition, go-live, or acceptance by the customer."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "Test"@en .
@@ -138,7 +161,7 @@ wpl:Test a skos:Concept;
 wpl:Deploy a skos:Concept;
   dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
   dct:creator <https://www.pmi.org/>;
-  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:broader wpl:ReferenceProjectLife-cyclePhase;
   skos:definition "Project deliverables are put into use and transitional activities required for sustainment, benefits realization, and organizational change management are completed."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "Deploy"@en .
@@ -146,39 +169,39 @@ wpl:Deploy a skos:Concept;
 wpl:Close a skos:Concept;
   dct:bibliographicCitation "urn:ISBN:9781628256659"@en;
   dct:creator <https://www.pmi.org/>;
-  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:broader wpl:ReferenceProjectLife-cyclePhase;
   skos:definition "The project is closed, project knowledge and artifacts are archived, project team members are released, and contracts are closed."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "Close"@en .
 
 wpl:AllProjectPhases a skos:Concept;
-  skos:broader wpl:ReferenceProjectLifeCyclePhase;
+  skos:broader wpl:ReferenceProjectLife-cyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "All Project Phases"@en .
 
-wpl:ProductLifeCyclePhase a skos:Concept;
+wpl:ProductLife-cyclePhase a skos:Concept;
   skos:broader wpl:LifeCyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:narrower wpl:AllProductPhases, wpl:Conception, wpl:Design, wpl:Realisation, wpl:Service;
-  skos:prefLabel "Product Life Cycle Phase"@en .
+  skos:prefLabel "Product Life-cycle Phase"@en .
 
 wpl:Conception a skos:Concept;
-  skos:broader wpl:ProductLifeCyclePhase;
+  skos:broader wpl:ProductLife-cyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "Conception"@en .
 
 wpl:Realisation a skos:Concept;
-  skos:broader wpl:ProductLifeCyclePhase;
+  skos:broader wpl:ProductLife-cyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "Realisation"@en .
 
 wpl:Service a skos:Concept;
-  skos:broader wpl:ProductLifeCyclePhase;
+  skos:broader wpl:ProductLife-cyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "Service"@en .
 
 wpl:AllProductPhases a skos:Concept;
-  skos:broader wpl:ProductLifeCyclePhase;
+  skos:broader wpl:ProductLife-cyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "All Product Phases"@en .
 
@@ -269,3 +292,426 @@ wpl:Closure a skos:Concept;
   skos:definition "Those processes performed to formally complete or close a project, phase, or contract."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel "Closure"@en .
+
+wpl:Research-Develeopment a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Research & Develeopment"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Analysis-Modelling a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Analysis & Modelling"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:SensitivityAnalysis a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Sensitivity Analysis"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:UncertaintyQuantification a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Uncertainty Quantification"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Simulation a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Simulation"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:SWOTanalysis a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "SWOT analysis"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:What-ifScenario a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "What-if Scenario"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:ConceptualModelling a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Conceptual Modelling"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:MathematicalModelling a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Mathematical Modelling"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:DataAnalysis a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Data Analysis"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:StakeholderCommunication a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Stakeholder Communication"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:InformationSecurityManagement a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Information Security Management"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:ChangeManagement a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Change Management"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:FinancialManagemnt a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Financial Managemnt"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:KnowledgeManagement a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Knowledge Management"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:DataManagement a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Data Management"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Documentation-Reporting a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Documentation & Reporting"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:HumanResourceManagement a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Human Resource Management"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Meeting-Event a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Meeting & Event"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Legal-Regulatory a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Legal & Regulatory"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Ethics-Compliance a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Ethics & Compliance"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Health-Safety a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Health & Safety"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:MarketAnalysis a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Market Analysis"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:SiteSelection a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Site Selection"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Prospecting a skos:Concept;
+  skos:definition "Rough energy yield estimates and comparisons at different potential sites"@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Prospecting"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindResourceAssessment a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Resource Assessment"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:EnvironmentalImpactAssessment a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Environmental Impact Assessment"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Permitting a skos:Concept;
+  skos:definition "Environmental permits, land permits"@en;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Permitting"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:VendorSelection a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Vendor Selection"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:RiskAssessment a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Risk Assessment"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:FinancialPlanning a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Financial Planning"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Procurement a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Procurement"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Commissioning a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Commissioning"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Certification a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Certification"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:AnnualEnergyProductionAssessment a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Annual Energy Production Assessment"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:QualityAssureance-Control a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Quality Assureance & Control"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Monitoring-Reporting a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Monitoring & Reporting"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:FinancialControl a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Financial Control"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Expansion a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Expansion"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:PhaseOut a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Phase Out"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindPowerPlantSpecification a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Power Plant Specification"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:TechnologySelection a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Technology Selection"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindPowerPlantLayoutDefinition a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Power Plant Layout Definition"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindPowerPlantSitePreparation a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Power Plant Site Preparation"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindPowerPlantConstruction a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Power Plant Construction"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:CivilWorks a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Civil Works"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:ElectricalWorks a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Electrical Works"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineInstallation a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Installation"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindPowerPlantOperation a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Power Plant Operation"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Forecasting a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Forecasting"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindPowerPlantSupervision a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Power Plant Supervision"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindPowerPlantOperationalAnalysis a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Power Plant Operational Analysis"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WidPowerPlantMaintenence a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:narrower wpl:PredictiveMaintenance, wpl:Risk-basedMaintenance;
+  skos:prefLabel "Wid Power Plant Maintenence"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:MaintenceScheduling a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Maintence Scheduling"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:PredictiveMaintenance a skos:Concept;
+  skos:broader wpl:WidPowerPlantMaintenence;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Predictive Maintenance"@en .
+
+wpl:Risk-basedMaintenance a skos:Concept;
+  skos:broader wpl:WidPowerPlantMaintenence;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Risk-based Maintenance"@en .
+
+wpl:EquipmentServicing a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Equipment Servicing"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindPowerPlantControl a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Power Plant Control"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineSpecification a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Specification"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineConceptDesign a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Concept Design"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineDesign a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Design"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineDesignValidation a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Design Validation"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineManufacturingPlanning a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Manufacturing Planning"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineComponentsManufacturing a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Components Manufacturing"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineComponentsAssembly a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Components Assembly"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineComponentsTransportaion a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Components Transportaion"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineAssembly a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Assembly"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineCertification a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Certification"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineTesting a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Testing"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineVending a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Vending"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineOperation-Monitoring a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Operation & Monitoring"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineControl a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Control"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Inspeciton a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Inspeciton"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:StructuralHealthMonitoring a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Structural Health Monitoring"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Real-TimeMonitoring a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Real-Time Monitoring"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:FailureDetection a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Failure Detection"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:FaultDiagnosis a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Fault Diagnosis"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineVendorSupport-Maintenence a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Vendor Support & Maintenence"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:Upgrade-Retrofits a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Upgrade & Retrofits"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineDecomissioning a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Decomissioning"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:RemainingUsefulLifeCalculation a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Remaining Useful Life Calculation"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineUsefulLifeExtension a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Useful Life Extension"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineDissasembly a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Dissasembly"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+
+wpl:WindTurbineComponentsRecycling a skos:Concept;
+  skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:prefLabel "Wind Turbine Components Recycling"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
