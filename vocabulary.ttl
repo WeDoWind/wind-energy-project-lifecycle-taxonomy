@@ -23,7 +23,7 @@
   dct:description "A simple SKOS Taxonomy of life-cycle stages"@en;
   dct:license <http://creativecommons.org/licenses/by/4.0/>;
   dct:title "Life Cycle Phase and Process Taxonomy"@en;
-  owl:versionInfo "0.1.1"@en;
+  owl:versionInfo "0.1.2"@en;
   skos:hasTopConcept wpl:LifeCyclePhase, wpl:Process, wpl:ProcessGroup;
   skos:prefLabel "WINDPROFILE"@en .
 
